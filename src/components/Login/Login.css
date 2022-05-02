@@ -1,0 +1,33 @@
+.login-bg {
+    background-image: url(../../images/lbg-1.jpg);
+    /*background-color: aqua;*/
+    /* height: 100vh !important;
+    width: 100% !important;
+    background-repeat: no-repeat; */
+    width: '100vw';
+    height: '100vh'
+
+}
+
+.login-container {
+    margin-top: 120px;
+}
+
+.login-body {
+    text-align: center;
+}
+
+.login-body a {
+    text-decoration: none !important;
+}
+
+.btn-submit {
+    width: 50%;
+    margin-top: 20px;
+    background-color: brown;
+    border-radius: 10px;
+    padding: 10px 0px;
+    border: 1px solid brown;
+    color: antiquewhite;
+    font-size: 20px;
+}

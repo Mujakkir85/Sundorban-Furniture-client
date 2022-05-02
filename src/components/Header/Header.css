@@ -1,0 +1,21 @@
+.nav-container {
+    background-color: #d4b889 !important;
+    height: 100px;
+}
+
+.brand p {
+    font-weight: bolder;
+    font-size: 34px;
+    color: #f7f0ea;
+    margin-right: 100px;
+}
+
+.navstyle {
+    margin-left: 38%;
+}
+
+.navstyle a {
+    margin-left: 20px !important;
+    font-weight: 700;
+    color: #f7f0ea !important;
+}
