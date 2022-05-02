@@ -25,9 +25,9 @@ const Login = () => {
                             </form>
                             <p className='pt-3' ><Link to='/register'>Create A New Account?</Link></p>
                             <div className='d-flex align-items-center'>
-                                <div style={{ height: '2px', backgroundColor: 'brown' }} className=' w-50'></div>
+                                <div style={{ height: '1px', backgroundColor: '#8f6f40' }} className=' w-50'></div>
                                 <p className='mt-2 px-2'>or</p>
-                                <div style={{ height: '2px', backgroundColor: 'brown' }} className=' w-50'></div>
+                                <div style={{ height: '1px', backgroundColor: '#8f6f40' }} className=' w-50'></div>
                             </div>
                             <button className='btn-submit'>
                                 <img style={{ width: '35px' }} src={googleLogo2} alt="" />

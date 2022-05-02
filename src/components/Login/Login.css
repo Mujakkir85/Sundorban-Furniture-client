@@ -9,9 +9,9 @@
 
 }
 
-.login-container {
+/* .login-container {
     margin-top: 120px;
-}
+} */
 
 .login-body {
     text-align: center;
@@ -22,12 +22,12 @@
 }
 
 .btn-submit {
-    width: 50%;
+    width: 100%;
     margin-top: 20px;
-    background-color: brown;
+    background-color: #8f6f40;
     border-radius: 10px;
     padding: 10px 0px;
-    border: 1px solid brown;
+    border: 1px solid #8f6f40;
     color: antiquewhite;
     font-size: 20px;
 }
