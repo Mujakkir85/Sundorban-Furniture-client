@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Register.css'
 import googleLogo2 from '../../images/google-logo2.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
+
 
 const Register = () => {
+    let nameRef = useRef('');
+    let emailRef = useRef('');
+    let passwordRef = useRef('');
+    const navigate = useNavigate();
+
+    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+
+    const handleRegister = (event) => {
+        event.preventDefault();
+        nameRef = nameRef.current.value;
+        emailRef = emailRef.current.value;
+        passwordRef = passwordRef.current.value;
+        createUserWithEmailAndPassword(emailRef, passwordRef)
+    }
+
+    if (user) {
+        navigate('/');
+    }
     return (
         <div className='login-bg'>
             <div className='container'>
@@ -11,17 +32,17 @@ const Register = () => {
                     <div className="login-body card w-100">
                         <div className="card-body">
                             <h2 className='d-flex justify-content-center'>REGISTER YOURSELF</h2>
-                            <form>
+                            <form onSubmit={handleRegister}>
                                 <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" name="name" placeholder="name@example.com" required />
+                                    <input ref={nameRef} type="text" className="form-control" name="name" placeholder="name@example.com" required />
                                     <label>Full Name</label>
                                 </div>
                                 <div className="form-floating mb-3">
-                                    <input type="email" className="form-control" name="email" placeholder="name@example.com" required />
+                                    <input ref={emailRef} type="email" className="form-control" name="email" placeholder="name@example.com" required />
                                     <label>Email address</label>
                                 </div>
                                 <div className="form-floating">
-                                    <input type="password" className="form-control" name="password" placeholder="Password" required />
+                                    <input ref={passwordRef} type="password" className="form-control" name="password" placeholder="Password" required />
                                     <label>Password</label>
                                 </div>
                                 <input className='btn-submit' type="submit" value="Register" />

@@ -1,24 +1,47 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Login.css';
-import bgimg from '../../images/login-image2.webp';
 import googleLogo2 from '../../images/google-logo2.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Login = () => {
+
+    let emailRef = useRef('');
+    let passwordRef = useRef('');
+    const navigate = useNavigate();
+    let location = useLocation();
+
+    let from = location.state?.from?.pathname || '/';
+    //console.log(from);
+
+
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+
+    const handleLogin = event => {
+        event.preventDefault();
+        emailRef = emailRef.current.value;
+        passwordRef = passwordRef.current.value;
+        signInWithEmailAndPassword(emailRef, passwordRef)
+    }
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
     return (
         <div className='login-bg'>
-            <div className='container '>
+            <div className='container'>
                 <div className='login-container w-50 mx-auto shadow p-3 mb-5 bg-body rounded ' >
                     <div className="login-body card w-100">
                         <div className="card-body">
                             <h2 className='d-flex justify-content-center'>LOGIN</h2>
-                            <form>
+                            <form onSubmit={handleLogin}>
                                 <div className="form-floating mb-3">
-                                    <input type="email" className="form-control" name="email" placeholder="name@example.com" required />
+                                    <input ref={emailRef} type="email" className="form-control" name="email" placeholder="name@example.com" required />
                                     <label>Email address</label>
                                 </div>
                                 <div className="form-floating">
-                                    <input type="password" className="form-control" name="password" placeholder="Password" required />
+                                    <input ref={passwordRef} type="password" className="form-control" name="password" placeholder="Password" required />
                                     <label>Password</label>
                                 </div>
                                 <input className='btn-submit' type="submit" value="Login" />
