@@ -12,7 +12,9 @@ const Register = () => {
     let passwordRef = useRef('');
     const navigate = useNavigate();
 
-    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, {
+        useSendEmailVerification: true
+    });
 
     const handleRegister = (event) => {
         event.preventDefault();
