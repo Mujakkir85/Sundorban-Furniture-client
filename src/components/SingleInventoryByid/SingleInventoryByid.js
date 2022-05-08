@@ -24,11 +24,18 @@ const SingleInventoryByid = () => {
                     <Card.Title>Quantity: {singleInventorydetails.quantity}</Card.Title>
                     <Card.Title>Supplier: {singleInventorydetails.supplier_name}</Card.Title>
                     <Card.Text>{singleInventorydetails.description}</Card.Text>
-                    <Button variant="primary">Deleverd</Button>
+                    <Button variant="primary">Delivered</Button>
                     {/* onClick={() => handleInventroy(_id)} */}
                 </Card.Body>
-
             </Card>
+            <form className=' d-flex justify-content-center'>
+                <div className="mb-3 w-25 ">
+                    <label for="exampleInputPassword1" className="form-label mt-3">Add Quantity</label>
+                    <input type="text" className="form-control" />
+                    <button type="submit" className="btn btn-primary mt-3">Submit</button>
+                </div>
+
+            </form>
         </div>
     );
 };

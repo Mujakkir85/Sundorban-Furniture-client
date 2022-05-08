@@ -16,7 +16,7 @@ const Inventory = (props) => {
         <Card className='col gy-5 cardclass' >
             <Card.Img variant="top" src={image} />
             <Card.Body>
-                <Card.Title>Service Title: {product_name}</Card.Title>
+                <Card.Title>Title: {product_name}</Card.Title>
                 <Card.Title>Price: {price}</Card.Title>
                 <Card.Title>Quantity: {quantity}</Card.Title>
                 <Card.Title>Supplier: {supplier_name}</Card.Title>
