@@ -11,6 +11,7 @@ import Mycollections from './components/Mycollections/Mycollections';
 import Notfound from './components/Notfound/Notfound';
 import Register from './components/Register/Register';
 import RequireAuth from './components/RequireAuth/RequireAuth';
+import SingleInventoryByid from './components/SingleInventoryByid/SingleInventoryByid';
 
 function App() {
   return (
@@ -18,6 +19,12 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+
+        <Route path='/inventory/:id'
+          element={<RequireAuth>
+            <SingleInventoryByid></SingleInventoryByid>
+          </RequireAuth>}>
+        </Route>
 
         <Route path='/managefurniture'
           element={<RequireAuth>

@@ -1,6 +1,6 @@
 .nav-container {
     background-color: #d4b889 !important;
-    height: 100px;
+    height: 100px !important;
 }
 
 .brand p {
@@ -16,5 +16,5 @@
 
 .navstyle a {
     font-weight: 700;
-    color: #f7f0ea !important;
+    /* color: #f7f0ea !important; */
 }
