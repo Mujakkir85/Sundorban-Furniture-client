@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Banner from '../Banner/Banner';
+import Chairs from '../Chairs/Chairs';
 import Expensive from '../Expensive/Expensive';
 import Inventory from '../Inventory/Inventory';
 import Loadallproducts from '../Loadallproducts/Loadallproducts';
@@ -29,6 +30,8 @@ const Home = () => {
             <div className='d-flex justify-content-center mt-3'>
                 <h2 className="text-primary ">Best Chairs</h2>
             </div>
+
+            <Chairs></Chairs>
 
         </div>
     );

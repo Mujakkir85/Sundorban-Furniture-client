@@ -6,9 +6,9 @@ const Allinvnetrory = (props) => {
     const { _id, product_name, description, price, quantity, supplier_name, image } = props.product
 
 
-    const DeleteInventroy = () => {
+    // const DeleteInventroy = () => {
 
-    }
+    // }
 
 
 
@@ -22,8 +22,8 @@ const Allinvnetrory = (props) => {
                 <Card.Title>Price: {price}</Card.Title>
                 <Card.Title>Quantity: {quantity}</Card.Title>
                 <Card.Title>Supplier: {supplier_name}</Card.Title>
-                {/* <Card.Text>{description}</Card.Text> */}
-                <Button onClick={() => DeleteInventroy(_id)} variant="primary">Delete</Button>
+
+                {/* <Button onClick={() => DeleteInventroy(_id)} variant="primary">Delete</Button> */}
             </Card.Body>
         </Card>
 

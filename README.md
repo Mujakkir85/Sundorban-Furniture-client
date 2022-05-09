@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+# Sundorban Furniture
+
+
+[Sundorban Furniture]() 
+
+# web site description:
+ Sundorban Furniture is web site where you will find nice furnitures and user can update funriture, data are saved in mongodb. products are loaded from data base dynamicaly. 
+
+# Features
+* Responsive home page 
+* Show products using React bootstrap card
+* Firebase authentication use eamil and password
+* Firebase google authentication
+* Created private route 
+* Email varification
+* Reset password with toast
+* You can add product by login
+* You can update product quantity
+
+
+
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

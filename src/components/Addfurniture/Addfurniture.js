@@ -1,7 +1,13 @@
 import React, { useRef } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import './Addfurniture.css'
 
 const Addfurniture = () => {
+
+    const [user] = useAuthState(auth);
+
+    let senduser = user.email;
 
     let product_name = useRef('');
     let description = useRef('');
@@ -21,7 +27,7 @@ const Addfurniture = () => {
         supplier_name = supplier_name.current.value;
 
 
-        const newfurniture = { product_name, description, price, image, quantity, supplier_name };
+        const newfurniture = { product_name, description, price, image, quantity, supplier_name, senduser };
         console.log(newfurniture);
 
         fetch('http://localhost:5000/addfurniture', {
