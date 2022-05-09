@@ -4,7 +4,7 @@ import Inventory from '../Inventory/Inventory';
 const Loadallproducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://fast-crag-11183.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

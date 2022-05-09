@@ -30,7 +30,7 @@ const Addfurniture = () => {
         const newfurniture = { product_name, description, price, image, quantity, supplier_name, senduser };
         console.log(newfurniture);
 
-        fetch('http://localhost:5000/addfurniture', {
+        fetch('https://fast-crag-11183.herokuapp.com/addfurniture', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

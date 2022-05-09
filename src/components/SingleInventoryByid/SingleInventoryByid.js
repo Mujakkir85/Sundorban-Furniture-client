@@ -8,7 +8,7 @@ const SingleInventoryByid = () => {
     const [singleInventorydetails, setSingleInventorydetails] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory/${id}`)
+        fetch(`https://fast-crag-11183.herokuapp.com/inventory/${id}`)
             .then(res => res.json())
             .then(data => setSingleInventorydetails(data))
     }, [])
@@ -16,6 +16,7 @@ const SingleInventoryByid = () => {
 
     // handleDelivered
     const handleDelivered = evnet => {
+        evnet.preventDefault()
 
         const quantity = singleInventorydetails.quantity;
 
@@ -30,13 +31,18 @@ const SingleInventoryByid = () => {
 
         console.log(quantitys)
 
-        fetch(`http://localhost:5000/inventory/${id}`, {
+        fetch(`https://fast-crag-11183.herokuapp.com/inventory/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ quantitys })
         })
             .then(res => res.json())
             .then(data => console.log(data))
+
+        // .then(data =>{
+        //     singleInventorydetails.quantity = quantitys;
+        //     setSingleInventorydetails({ ...singleInventorydetails })
+        // } )
 
     }
 
@@ -50,7 +56,7 @@ const SingleInventoryByid = () => {
         singleInventorydetails.quantity = quantity;
         setSingleInventorydetails({ ...singleInventorydetails })
 
-        fetch(`http://localhost:5000/inventory/${id}`, {
+        fetch(`https://fast-crag-11183.herokuapp.com/inventory/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -7,7 +7,7 @@ const Managefurniture = () => {
     const [products, setProducts] = useState([])
     let navigate = useNavigate()
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://fast-crag-11183.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
