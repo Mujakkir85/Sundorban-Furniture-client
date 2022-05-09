@@ -4,12 +4,17 @@ import { useNavigate } from 'react-router-dom';
 
 const Allinvnetrory = (props) => {
     const { _id, product_name, description, price, quantity, supplier_name, image } = props.product
-    let navigate = useNavigate()
+
 
     const DeleteInventroy = () => {
 
     }
+
+
+
     return (
+
+
         <Card className='col gy-5 cardclass' >
             <Card.Img variant="top" src={image} />
             <Card.Body>
@@ -20,8 +25,10 @@ const Allinvnetrory = (props) => {
                 {/* <Card.Text>{description}</Card.Text> */}
                 <Button onClick={() => DeleteInventroy(_id)} variant="primary">Delete</Button>
             </Card.Body>
-
         </Card>
+
+
+
     );
 };
 
